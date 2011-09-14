@@ -1,0 +1,42 @@
+FILE(REMOVE_RECURSE
+  "../msg_gen"
+  "../srv_gen"
+  "../src/pr2_controllers_msgs/msg"
+  "../src/pr2_controllers_msgs/srv"
+  "../msg_gen"
+  "../srv_gen"
+  "CMakeFiles/ROSBUILD_genaction_msgs"
+  "../msg/JointTrajectoryAction.msg"
+  "../msg/JointTrajectoryGoal.msg"
+  "../msg/JointTrajectoryActionGoal.msg"
+  "../msg/JointTrajectoryResult.msg"
+  "../msg/JointTrajectoryActionResult.msg"
+  "../msg/JointTrajectoryFeedback.msg"
+  "../msg/JointTrajectoryActionFeedback.msg"
+  "../msg/SingleJointPositionAction.msg"
+  "../msg/SingleJointPositionGoal.msg"
+  "../msg/SingleJointPositionActionGoal.msg"
+  "../msg/SingleJointPositionResult.msg"
+  "../msg/SingleJointPositionActionResult.msg"
+  "../msg/SingleJointPositionFeedback.msg"
+  "../msg/SingleJointPositionActionFeedback.msg"
+  "../msg/PointHeadAction.msg"
+  "../msg/PointHeadGoal.msg"
+  "../msg/PointHeadActionGoal.msg"
+  "../msg/PointHeadResult.msg"
+  "../msg/PointHeadActionResult.msg"
+  "../msg/PointHeadFeedback.msg"
+  "../msg/PointHeadActionFeedback.msg"
+  "../msg/Pr2GripperCommandAction.msg"
+  "../msg/Pr2GripperCommandGoal.msg"
+  "../msg/Pr2GripperCommandActionGoal.msg"
+  "../msg/Pr2GripperCommandResult.msg"
+  "../msg/Pr2GripperCommandActionResult.msg"
+  "../msg/Pr2GripperCommandFeedback.msg"
+  "../msg/Pr2GripperCommandActionFeedback.msg"
+)
+
+# Per-language clean rules from dependency scanning.
+FOREACH(lang)
+  INCLUDE(CMakeFiles/ROSBUILD_genaction_msgs.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

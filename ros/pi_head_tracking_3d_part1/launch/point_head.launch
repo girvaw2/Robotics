@@ -1,0 +1,6 @@
+<launch>
+	<arg name="dynamixel_namespace" value="dynamixel_controller" />
+
+    <!-- Start the point_head node -->
+    <node name="point_head_node" pkg="pi_head_tracking_3d_part1" type="point_head.py" output="screen" />
+</launch>

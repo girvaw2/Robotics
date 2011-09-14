@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/wg-ros-pkg/!svn/ver/49056/stacks/pr2_controllers/branches/pr2_controllers-1.4/pr2_controllers_msgs/srv
+END
+QueryTrajectoryState.srv
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/wg-ros-pkg/!svn/ver/49056/stacks/pr2_controllers/branches/pr2_controllers-1.4/pr2_controllers_msgs/srv/QueryTrajectoryState.srv
+END
+QueryCalibrationState.srv
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/wg-ros-pkg/!svn/ver/49056/stacks/pr2_controllers/branches/pr2_controllers-1.4/pr2_controllers_msgs/srv/QueryCalibrationState.srv
+END

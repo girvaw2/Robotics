@@ -1,0 +1,37 @@
+<launch>
+	<!-- Define the namespace for all our controllers -->
+	<arg name="ax12_namespace" value="ax12_controller" />
+
+    <!-- Load the URDF/Xacro model of our robot -->
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find pi_head_tracking_3d_part1)/urdf/kinectbot.urdf.xacro'" />
+
+    <!-- Publish the robot state -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+    	<param name="publish_frequency" value="20.0"/>
+    </node>
+
+	<!-- Start the ax12 controller manager -->
+    <node ns="$(arg ax12_namespace)" name="ax12_manager" pkg="ax12_controller_core" type="controller_manager.py" required="true" output="screen">
+        <param name="port_name" type="str" value="/dev/ttyUSB0" />
+        <param name="baud_rate" type="int" value="1000000"/>
+        <param name="min_motor_id" type="int" value="1"/>
+        <param name="max_motor_id" type="int" value="2"/>
+        <param name="update_rate" type="int" value="10"/>
+    </node>
+
+    <!-- Load joint controller configuration to parameter server -->
+    <rosparam ns="$(arg ax12_namespace)" file="$(find pi_head_tracking_3d_part1)/params/ax12_params.yaml" command="load"/>
+
+    <!-- Start individual joint controllers -->
+    <node ns="$(arg ax12_namespace)" name="ax12_controller_spawner" pkg="ax12_controller_core" type="controller_spawner.py"
+          args="--port /dev/ttyUSB0
+		head_pan_controller
+		head_tilt_controller"
+        output="screen" />
+        
+    <!-- Start the ax12 joint state publisher -->
+    <node ns="$(arg ax12_namespace)" name="ax12_joint_state_publisher" pkg="pi_head_tracking_3d_part1" type="ax12_joint_state_publisher.py" />
+    
+   <!-- Publish a static transform between the robot base and the world frame -->
+   <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 0.0325 0 0 0 /world /base_link 100" />
+</launch>

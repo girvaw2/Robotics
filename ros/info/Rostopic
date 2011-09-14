@@ -1,0 +1,1 @@
+rostopic pub /cmd_joints sensor_msgs/JointState -- '{ header: {frame_id: head_pan_joint }, name: ['head_pan_joint', 'head_tilt_joint'], position: [1.0, 1.0], velocity: [0.1, 0.1], effort: [0.1, 0.1]}'

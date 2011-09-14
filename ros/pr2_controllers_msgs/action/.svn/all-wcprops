@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/wg-ros-pkg/!svn/ver/49056/stacks/pr2_controllers/branches/pr2_controllers-1.4/pr2_controllers_msgs/action
+END
+JointTrajectory.action
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/wg-ros-pkg/!svn/ver/49056/stacks/pr2_controllers/branches/pr2_controllers-1.4/pr2_controllers_msgs/action/JointTrajectory.action
+END
+SingleJointPosition.action
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/wg-ros-pkg/!svn/ver/49056/stacks/pr2_controllers/branches/pr2_controllers-1.4/pr2_controllers_msgs/action/SingleJointPosition.action
+END
+PointHead.action
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/wg-ros-pkg/!svn/ver/49056/stacks/pr2_controllers/branches/pr2_controllers-1.4/pr2_controllers_msgs/action/PointHead.action
+END
+Pr2GripperCommand.action
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/wg-ros-pkg/!svn/ver/49056/stacks/pr2_controllers/branches/pr2_controllers-1.4/pr2_controllers_msgs/action/Pr2GripperCommand.action
+END

@@ -1,0 +1,20 @@
+roslaunch pi_head_tracking_3d_part1 ax12.launch ----> Launch the controller
+
+roslaunch pi_head_tracking_3d_part1 point_head.launch ----> Launch the Head Pointing node.
+
+rosrun rviz rviz -d tutorial.vcg ----> Launch RViz (optional)
+
+
+
+To move the head, use the following commands:
+
+rostopic pub -1 /target_point geometry_msgs/PointStamped '{ header: {frame_id: base_link }, point: {x: 1.0, y: 0.0, z: 0.0} }'
+
+or to repeat the publishing every second...
+
+rostopic pub -r 1 /target_point geometry_msgs/PointStamped '{ header: {frame_id: head_link }, point: {x: 5.0, y: 0.0, z: 0.01} }'
+
+or, use a GUI:
+
+rosrun pi_head_tracking_3d_part1 head_pointer_gui.py
+

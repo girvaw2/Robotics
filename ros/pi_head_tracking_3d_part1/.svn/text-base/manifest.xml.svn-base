@@ -1,0 +1,19 @@
+<package>
+  <description brief="pi_head_tracking_3d_part1">
+     Head Tracking in 3D Part 1
+  </description>
+  <author>Patrick Goebel</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://www.pirobot.org/blog/0018</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf"/>
+  <depend package="rviz"/>
+  <depend package="robot_state_publisher"/>
+  <depend package="joint_state_publisher"/>
+  <depend package="ax12_controller_core"/>
+  <rosdep name="wxpython"/>
+</package>

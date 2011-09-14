@@ -1,0 +1,58 @@
+------------- tilt ---------------------
+
+roslaunch dynamixel_tutorials controller_manager.launch
+
+roslaunch dynamixel_tutorials start_tilt_controller.launch
+
+rostopic pub -1 /tilt_controller/command std_msgs/Float64 -- 3  // set position to 3 radians
+
+
+rosservice type /controller_manager/dxl_tty1/start_controller | rossrv show
+string port_name
+string package_path
+string module_name
+string class_name
+string controller_name
+string[] dependencies
+
+------------- pan ---------------------
+
+roslaunch dynamixel_tutorials controller_manager.launch
+
+roslaunch dynamixel_tutorials start_pan_controller.launch
+
+rostopic pub -1 /pan_controller/command std_msgs/Float64 -- 3  // set position to 3 radians
+
+
+rosservice type /controller_manager/dxl_tty1/start_controller | rossrv show
+string port_name
+string package_path
+string module_name
+string class_name
+string controller_name
+string[] dependencies
+
+
+------------ launch files ---------------------------- 
+
+The 3 launch files are:
+	start_pan_controller.launch
+	controller_manager.launch
+	controller_spawner.launch
+
+------------ The point head node ----------------------- 
+
+roslaunch pi_head_tracking_3d_part1 ax12.launch 
+
+-- in another shell:
+roslaunch pi_head_tracking_3d_part1 point_head.launch 
+
+-- in another shell:
+rostopic pub -1 /target_point geometry_msgs/PointStamped '{ header: {frame_id: base_link }, point: {x: 0.0, y: 0.0, z: 0.0} }'
+
+------------ The point head gui -----------------------
+
+
+rosrun pi_head_tracking_3d_part1 head_pointer_gui.py
+
+
