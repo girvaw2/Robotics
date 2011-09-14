@@ -140,7 +140,6 @@ if __name__ == '__main__':
         rospy.loginfo('%s controller_spawner: waiting for controller_manager %s to startup in %s namespace...' % (port_namespace, manager_namespace, parent_namespace))
         
         rospy.wait_for_service(start_service_name)
-        rospy.loginfo('1')
         rospy.wait_for_service(stop_service_name)
         rospy.wait_for_service(restart_service_name)
         

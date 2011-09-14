@@ -75,7 +75,7 @@ class ControllerManager:
         self.serial_proxies = {}
         self.diagnostics_rate = rospy.get_param('~diagnostics_rate', 1)
         
-        #manager_namespace = 'controller_manager' #rospy.get_param('~namespace')
+        #manager_namespace = 'dynamixel_controller_manager' #rospy.get_param('~namespace')
         manager_namespace = rospy.get_param('~namespace')
         serial_ports = rospy.get_param('~serial_ports')
         
@@ -110,6 +110,9 @@ class ControllerManager:
             #      /dynamixel_manager/robot_head_port/start_controller
             # where 'dynamixel_manager' is manager's namespace
             #       'robot_arm_port' and 'robot_head_port' are human readable names for serial ports
+            
+            rospy.loginfo ('DEBUG::: %s/%s/start_controller' % (manager_namespace, port_namespace))
+            
             rospy.Service('%s/%s/start_controller' % (manager_namespace, port_namespace), StartController, self.start_controller)
             rospy.Service('%s/%s/stop_controller' % (manager_namespace, port_namespace), StopController, self.stop_controller)
             rospy.Service('%s/%s/restart_controller' % (manager_namespace, port_namespace), RestartController, self.restart_controller)
